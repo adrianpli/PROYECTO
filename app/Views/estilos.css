@@ -1,0 +1,92 @@
+img {
+    max-width: 100%;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    background-color: green;
+}
+
+h1 {
+    font-size: 3.8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 3.4rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+@media (min-width:480px) {
+    .barra {
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.site-header {
+    background-size: cover;
+    text-align: center;
+    padding: 1rem;
+}
+
+.barra {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formulario {
+    text-align: center;
+}
+
+.formulario input {
+    margin-bottom: 1rem;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.boton {
+    font-weight: 300;
+    padding: .5rem;
+    border-radius: 1rem;
+    background-color: #4682b4;
+    color: black;
+}
+
+.boton:hover {
+    background-color: #00bfff;
+    cursor: pointer;
+}
+
+.resultado {
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.nota {
+    background-color: green;
+    color: white;
+}
