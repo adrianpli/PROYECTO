@@ -69,7 +69,6 @@
     </form>
     <center>
     <form action="http://localhost/PROYECTO/index.php?controller=usuario&action=eliminarCuenta" method="post">
-
         <input  type="submit" value="Eliminar cuenta" class="boton-rojo centrar-texto">
     </form>
     </center>
