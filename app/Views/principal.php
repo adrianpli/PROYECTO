@@ -9,12 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/4428506a18.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="public/CSS/estilos.css">
-
     <title>Consulta RFC</title>
-
 </head>
 <body>
-
 <header class="site-header">
     <div class="barra">
     <a href="" style="text-decoration: none; color:black;">
@@ -22,11 +19,8 @@
    <span style="font-weight: 400; font-size:2rem;">Consulta</span><span style="font-weight: 700; font-size:3rem;">RFC</span>
    </a>
    </div>
-
 <?php
-
 if(isset($_GET["b"])&&$_GET["b"]==1){?>
-
 <div class="navegacion">
 <span style="font-weight: 400;"> Bienvenido: <a href="http://localhost/PROYECTO/index.php?controller=usuario&action=verPerfil">  <?php echo strtoupper($_SESSION["nombre"]) ?>  </span></a>
    </div>
@@ -34,7 +28,6 @@ if(isset($_GET["b"])&&$_GET["b"]==1){?>
         <a style="text-decoration: none; color:black;" href="http://localhost/PROYECTO/index.php?controller=usuario&action=cerrarSesion" >Cerrar sesión</a>
     </div>
     <?php
-
 }else{
     unset($_SESSION["id"],$_SESSION["nombre"],$_SESSION["app"],$_SESSION["apm"], $_SESSION["correoUser"],$_SESSION["telefono"] , $_SESSION["rfc"] ,$_SESSION["rfcgenerado"] );
     ?>
@@ -44,7 +37,6 @@ if(isset($_GET["b"])&&$_GET["b"]==1){?>
 <?php
 }
 ?>
-
 </div>
 </header>
 <div class="contenedor contenedor-grid">
@@ -62,8 +54,6 @@ if(isset($_GET["b"])&&$_GET["b"]==1){?>
   </div>
 </div>
 </div>
-
-
 <div class="divisora">
 <p class="centrar-texto">Consultar RFC ahora</p>
 <div class="centrar-texto">
@@ -73,7 +63,6 @@ if(isset($_GET["b"])&&$_GET["b"]==1){?>
 </div>
 </div>
 <main>
-
     <h2 class="centrar-texto" id="llenar">Ingrese los datos solicitados</h2>
     <div class="contenedor-formulario">
     <form action="http://localhost/PROYECTO/index.php?controller=sistema&action=crearRFC" method="POST" class="formulario">
@@ -91,18 +80,14 @@ if(isset($_GET["b"])&&$_GET["b"]==1){?>
         <input type="date" name="Nacimiento" value="2000-01-01" required><br>
 
        <input type="submit" value="Consultar" class="boton">
-
     </form>
     </div>
 <p class="resultado centrar-texto">RFC: <span style="font-weight: 200;">  <?php if(isset($_SESSION["rfcgenerado"])) echo strtoupper($_SESSION["rfcgenerado"]) ?>   </span></p>
-
 </main>
-
 <footer>
     <div class="footer">
         <span style="font-weight: 400; font-size:2rem;">Todos los derechos reservados 2021 </span>
     </div>
 </footer>
-
 </body>
 </html>

@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="public/CSS/estilos.css">
     <title>Consulta RFC</title>
 </head>
-
 <body>
 <header class="site-header">
 <div class="barra">
@@ -20,10 +19,8 @@
    <span style="font-weight: 400; font-size:2rem;">Consulta</span><span style="font-weight: 700; font-size:3rem;">RFC</span>
    </a>
    </div>
-  
 </header>
 <main>
-
 <h2 class="centrar-texto" id="llenar">Ingrese los datos solicitados</h2>
     <div class="contenedor-formulario">
     <form action="http://localhost/PROYECTO/index.php?controller=sistema&action=verificarRegistro" method="POST" class="formulario">
@@ -46,12 +43,9 @@
         <input type="password" name="contra" required size="30"><br>
 
        <input type="submit" value="Registarse" class="boton">
-
     </form>
     </div>
-
 </main>
-
 <footer>
     <div class="footer">
         <span style="font-weight: 400; font-size:2rem;">Todos los derechos reservados 2021 </span>

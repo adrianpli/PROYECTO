@@ -20,7 +20,6 @@
         </a>
     </div>
     </div>
-
 </header>
 <style>
     .centrar-texto{
@@ -41,30 +40,27 @@
             justify-self: end;
         }
     }
-
 </style>
 <main>
-
 <h1 class="centrar-texto" style="font-weight: 400">Datos de <?php if(isset($_SESSION["nombre"])) echo strtoupper(($_SESSION["nombre"]));?></h1>
 
     <form class="formulario" action="http://localhost/PROYECTO/index.php?controller=usuario&action=actualizarDatos" method="post">
         <div class="formulario-grid">
         <div class="contenido-izquierda">
         <label>Nombre</label><br>
-        <input class="centrar-texto" type="text" size="50" name="nombreInput" value="<?php if(isset($_SESSION["nombre"])) echo strtoupper(($_SESSION["nombre"])); ?>" >
+        <input class="centrar-texto" type="text"  name="nombreInput" value="<?php if(isset($_SESSION["nombre"])) echo strtoupper(($_SESSION["nombre"])); ?>" >
             <br><label>Apellido paterno</label><br>
-        <input class="centrar-texto" type="text" size="50" name="appInput" value="<?php if(isset($_SESSION["app"])) echo strtoupper($_SESSION["app"]);?>">
+        <input class="centrar-texto" type="text" name="appInput" value="<?php if(isset($_SESSION["app"])) echo strtoupper($_SESSION["app"]);?>">
             <br> <label>Apellido materno</label><br>
-            <input class="centrar-texto" type="text" size="50" name="apmInput" value="<?php if(isset($_SESSION["apm"])) echo strtoupper($_SESSION["apm"]);?>">
-
+            <input class="centrar-texto" type="text"  name="apmInput" value="<?php if(isset($_SESSION["apm"])) echo strtoupper($_SESSION["apm"]);?>">
         </div>
             <div class="contenido-derecha">
                 <label>Correo</label><br>
-                <input class="centrar-texto" type="text" size="50" name="correoInput" value="<?php if(isset($_SESSION["correoUser"])) echo strtoupper($_SESSION["correoUser"]);?>">
+                <input class="centrar-texto" type="text"  name="correoInput" value="<?php if(isset($_SESSION["correoUser"])) echo strtoupper($_SESSION["correoUser"]);?>">
                 <br><label>Telefono</label><br>
-                <input class="centrar-texto" type="text" size="50" name="telefonoInput" value="<?php if(isset($_SESSION["telefono"])) echo strtoupper($_SESSION["telefono"]);?>">
+                <input class="centrar-texto" type="text"  name="telefonoInput" value="<?php if(isset($_SESSION["telefono"])) echo strtoupper($_SESSION["telefono"]);?>">
                 <br> <label>RFC</label><br>
-                <input class="centrar-texto" type="text" size="50" name="rfcInput" value="<?php if(isset($_SESSION["rfc"])) echo strtoupper($_SESSION["rfc"]);?>">
+                <input class="centrar-texto" type="text"  name="rfcInput" value="<?php if(isset($_SESSION["rfc"])) echo strtoupper($_SESSION["rfc"]);?>">
                 <br>
             </div>
         </div>
@@ -75,19 +71,12 @@
     <form action="http://localhost/PROYECTO/index.php?controller=usuario&action=eliminarCuenta" method="post">
 
         <input  type="submit" value="Eliminar cuenta" class="boton-rojo centrar-texto">
-
     </form>
     </center>
-
-
-
 </main>
-
 <footer>
     <div class="footer">
         <span style="font-weight: 400; font-size:2rem;">Todos los derechos reservados 2021 </span>
 </footer>
-
-
 </body>
 </html>
