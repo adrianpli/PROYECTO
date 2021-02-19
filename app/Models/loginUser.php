@@ -2,58 +2,35 @@
 
 namespace sistema;
 
-class loginUser{
-    
-
+class loginUser extends conexxion {
 public $correoUser,$contraUser,$registro;
-
-public function __construct()
+public function __construct(){
+    parent::__construct();
+}
+static function verificarUsuario($correoUser,$contraUser)
 {
-    
+
+    $conexion = new conexxion();
+
+    $consulta = "SELECT * FROM usuarios WHERE CORREO='$correoUser' and CONTRA='$contraUser'";
+    $resultado = mysqli_query($conexion->conex, $consulta);
+    $datos = mysqli_fetch_object($resultado);
+
+    $_SESSION["id"] = $datos->ID;
+    $_SESSION["nombre"] = $datos->NOMBRE;
+    $_SESSION["app"] = $datos->AP_PATERNO;
+    $_SESSION["apm"] = $datos->AP_MATERNO;
+    $_SESSION["correoUser"] = $datos->CORREO;
+    $_SESSION["telefono"] = $datos->TELEFONO;
+
+    return true;
 }
-function verificarUsuario(){
-    
-
-$conexion = new conexxion();
-
-/*
-$this->consulta=mysqli_prepare($conexion->conex, "SELECT * FROM usuarios WHERE CORREO = ? AND CONTRA = ?");
-$this->consulta->bind_param("ss",$this->correoUser,$this->contraUser);
-$this->consulta->execute();
-$filas=$this->consulta->num_rows();
-echo $filas;
-*/
-
-$log= "SELECT * FROM usuarios WHERE CORREO='$this->correoUser' AND CONTRA='$this->contraUser'";
-$resultado=mysqli_query($conexion->conex, $log);
-$filas=mysqli_num_rows($resultado);
-$datos=mysqli_fetch_array($resultado,MYSQLI_NUM);
-$nombreUs=$datos[1];
-$apellidoP=$datos[2];
-$apellidoM=$datos[3];
-
-
-
-
-if($filas==1){?>
-
-<script type=text/javascript>
-
-window.location="http://localhost/PROYECTO/index.php?controller=sistema&action=principal&nombre=<?php echo $nombreUs ?>&apellidoP=<?php echo $apellidoP ?>&apellidoM=<?php echo $apellidoM ?>&b=1";
-</script><?php
-
-}
-
-
-
-/*elseif($this->filas==0){
-    echo $this->filas;?>
-    <script>alert("No se pudo ingresar");
-    window.location="http://localhost/PROYECTO/index.php?controller=sistema&action=login";</script>
-    <?php
-}*/
-
-
+static function refrescarRFC($idUser){
+    $conexion = new conexxion();
+    $consulta = "SELECT RFC FROM usuarios WHERE ID = '$idUser'";
+    $resultado = mysqli_query($conexion->conex, $consulta);
+    $datos = mysqli_fetch_object($resultado);
+    $_SESSION["rfc"] = $datos->RFC;
 }
 }
 
